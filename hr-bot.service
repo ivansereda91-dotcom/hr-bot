@@ -1,0 +1,13 @@
+[Unit]
+Description=HR helper Telegram bot
+After=network-online.target
+
+[Service]
+WorkingDirectory=/opt/hr-bot
+EnvironmentFile=/opt/hr-bot/.env
+ExecStart=/opt/hr-bot/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
